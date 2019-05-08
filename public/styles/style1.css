@@ -1,10 +1,10 @@
 *{
   margin: 0;
   padding: 0;
-}
+} 
 
 body{
-  background: rgb(43, 50, 51);
+  background: rgba(233, 238, 238, 0.29);
   font-family: roboto;
   user-select: none;
 }
@@ -13,32 +13,35 @@ body{
   width: 450px;
   margin: 30px auto;
 }
-.warraper{
-margin: auto;
-
-}
-
 
 .signup,
 .login{
   width: 30%;
   background: rgb(99, 99, 99);
   float: left;
-  height: 50px;
+  height: 60px;
   line-height: 50px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
 }
 
-.signup-form,
+.signup-form{
+  background: rgb(155, 80, 52);
+  padding: 40px;
+  clear: both;
+  width: 60%;
+  box-sizing: border-box;
+  height: 400px;
+}
+
 .login-form{
   background: rgb(155, 80, 52);
   padding: 40px;
   clear: both;
   width: 60%;
   box-sizing: border-box;
-  height: 350px;
+  height: 325px;
 }
 
 .input{
