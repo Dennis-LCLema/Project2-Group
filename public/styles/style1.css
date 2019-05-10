@@ -17,13 +17,16 @@ body{
   margin: 30px auto;
 }
 
-.wrapper2{
+.wrapper2 {
   margin: auto;
+  width: 48%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .signup,
 .login{
-  width: 30%;
+  width: 100%;
   background: rgb(99, 99, 99);
   float: left;
   height: 60px;
