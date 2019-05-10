@@ -1,24 +1,37 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+
+  // GET route for getting all of the todos
+ 
+
+  
+  app.get("/api/chat", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Post.findAll({}).then(function(Posts) {
+      
+      res.json(Posts);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // POST route for saving a new todo
+  app.post("/api/chat", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Post.create({
+      body: req.body.body,
+      username: req.body.username
+     
+    }).then(function(Posts) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(Posts);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+ 
+
+
+ 
 };
