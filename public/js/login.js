@@ -49,31 +49,3 @@ app.get('/home', function(request, response) {
 
 app.listen(3000);
 
-
-
-
-
-
-$(".login-form").hide();
-$(".login").css("background", "none");
-
-$(".login").click(function(){
-  $(".signup-form").hide();
-  $(".login-form").show();
-  $(".signup").css("background", "none");
-  $(".login").css("background", "rgb(99, 99, 99)");
-console.log ("click on login")
-});
-
-
-$(".signup").click(function(){
-  $(".signup-form").show();
-  $(".login-form").hide();
-  $(".login").css("background", "none");
-  $(".signup").css("background", "rgb(99, 99, 99)");
-console.log("click on sign in")
-});
-
-$(".btn").click(function(){
-  $(".input").val("");
-});

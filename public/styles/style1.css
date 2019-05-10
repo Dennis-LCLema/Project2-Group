@@ -4,7 +4,10 @@
 } 
 
 body{
-  background: rgba(233, 238, 238, 0.29);
+  background-image: url(../styles/img/radek-novy-1287430-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: roboto;
   user-select: none;
 }
@@ -12,6 +15,10 @@ body{
 .container{
   width: 450px;
   margin: 30px auto;
+}
+
+.wrapper2{
+  margin: auto;
 }
 
 .signup,
@@ -24,24 +31,27 @@ body{
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
+  margin: auto;
 }
 
 .signup-form{
-  background: rgb(155, 80, 52);
+  background: transparent;
   padding: 40px;
   clear: both;
   width: 60%;
   box-sizing: border-box;
   height: 400px;
+  margin: auto;
 }
 
 .login-form{
-  background: rgb(155, 80, 52);
+  background: transparent;
   padding: 40px;
   clear: both;
   width: 60%;
   box-sizing: border-box;
   height: 325px;
+  margin: auto;
 }
 
 .input{
