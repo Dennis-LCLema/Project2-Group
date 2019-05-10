@@ -35,25 +35,29 @@ body {
 
 #homeImage {
   background: #333;
-}
-
-
-#sportsImage {
-  background: url("../styles/img/tommy-bebo-600358-unsplash.jpg");
+  background: url("../styles/img/radek-novy-1287430-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#musicImage {
-  background: url("../styles/img/jason-rosewell-60014-unsplash.jpg");
+
+#mlbImage {
+  background: url("../styles/img/jose-morales-571859-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#carsImage {
-  background: url("../styles/img/dhiva-krishna-491394-unsplash.jpg");
+#nbaImage {
+  background: url("../styles/img/neonbrand-308156-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#nflImage {
+  background: url("../styles/img/wade-austin-ellis-1232401-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -61,7 +65,7 @@ body {
 
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: top;  
 }
 .cover-container {
   margin-right: auto;
@@ -89,7 +93,7 @@ body {
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.6);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
@@ -166,126 +170,108 @@ body {
   }
 }
 
-.chatbubble {
-    position: fixed;
-    bottom: 0;
-    right: 30px;
-    transform: translateY(300px);
-    transition: transform .3s ease-in-out;
-}
-.chatbubble.opened {
-    transform: translateY(0)
-}
-.chatbubble .unexpanded {
-    display: block;
-    background-color: #e23e3e;
-    padding: 10px 15px 10px;
-    position: relative;
-    cursor: pointer;
-    width: 350px;
-    border-radius: 10px 10px 0 0;
-}
-.chatbubble .expanded {
-    height: 300px;
-    width: 350px;
-    background-color: #fff;
-    text-align: left;
-    padding: 10px;
-    color: #333;
-    text-shadow: none;
-    font-size: 14px;
-}
-.chatbubble .chat-window {
-  overflow: auto;
-}
-.chatbubble .loader-wrapper {
-    margin-top: 50px;
-    text-align: center;
-}
-.chatbubble .messages {
-    display: none;
-    list-style: none;
-    margin: 0 0 50px;
-    padding: 0;
-}
-.chatbubble .messages li {
-    width: 85%;
-    float: left;
-    padding: 10px;
-    border-radius: 5px 5px 5px 0;
-    font-size: 14px;
-    background: #c9f1e6;
-    margin-bottom: 10px;
-}
-.chatbubble .messages li .sender {
-    font-weight: 600;
-}
-.chatbubble .messages li.support {
-    float: right;
-    text-align: right;
-    color: #fff;
-    background-color: #e33d3d;
-    border-radius: 5px 5px 0 5px;
-}
-.chatbubble .chats .input {
-    position: absolute;
-    bottom: 0;
-    padding: 10px;
-    left: 0;
-    width: 100%;
-    background: #f0f0f0;
-    display: none;
-}
-.chatbubble .chats .input .form-group {
-    width: 80%;
-}
-.chatbubble .chats .input input {
-    width: 100%;
-}
-.chatbubble .chats .input button {
-    width: 20%;
+
+.chat-box {
+  position: absolute;
+  left: 30px;
+  bottom: 0px;
+  background: white;
+  width: 300px;
+  border-radius: 5px 5px 0px 0px;
 }
 
-.chatbubble .chats {
-  display: none;
-}
-.chatbubble .login-screen {
-  margin-top: 20px;
-  display: none;
-}
-.chatbubble .chats.active,
-.chatbubble .login-screen.active {
-  display: block;
+.chat-head {
+  width: inherit;
+  height: 45px;
+  background: #333;
+  border-radius: 5px 5px 0px 0px;
 }
 
-/* Loader Credit: https://codepen.io/ashmind/pen/zqaqpB */
-.chatbubble .loader {
-  color: #e23e3e;
-  font-family: Consolas, Menlo, Monaco, monospace;
-  font-weight: bold;
-  font-size: 10vh;
-  opacity: 0.8;
-}
-.chatbubble .loader span {
+.chat-head h2 {
+  color: white;
+  padding: 8px;
   display: inline-block;
-  -webkit-animation: pulse 0.4s alternate infinite ease-in-out;
-          animation: pulse 0.4s alternate infinite ease-in-out;
 }
-.chatbubble .loader span:nth-child(odd) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+
+.chat-head img {
+  cursor: pointer;
+  float: right;
+  width: 25px;
+  margin: 10px;
 }
-@-webkit-keyframes pulse {
-  to {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-    opacity: 0.5;
-  }
+
+.chat-body {
+  height: 355px;
+  width: inherit;
+  overflow: auto;
+  margin-bottom: 45px;
 }
-@keyframes pulse {
-  to {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-    opacity: 0.5;
-  }
+
+.chat-text {
+  position: fixed;
+  bottom: 0px;
+  height: 45px;
+  width: inherit;
+}
+
+.chat-text textarea {
+  width: inherit;
+  height: inherit;
+  box-sizing: border-box;
+  border: 1px solid #bdc3c7;
+  padding: 10px;
+  resize: none;
+}
+
+.chat-text textarea:active,
+.chat-text textarea:focus,
+.chat-text textarea:hover {
+  border-color: royalblue;
+}
+
+.msg-send {
+  background: black;
+}
+
+.msg-receive {
+  background: #3498db;
+}
+
+.msg-send,
+.msg-receive {
+  width: 200px;
+  height: 35px;
+  padding: 5px 5px 5px 10px;
+  margin: 10px auto;
+  border-radius: 3px;
+  line-height: 30px;
+  position: relative;
+  color: white;
+}
+
+.msg-receive:before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border: 15px solid;
+  border-color: transparent #3498db transparent transparent;
+  left: -29px;
+  top: 7px;
+}
+
+.msg-send:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border: 15px solid;
+  border-color: transparent transparent transparent black;
+  right: -29px;
+  top: 7px;
+}
+
+.msg-receive:hover,
+.msg-send:hover {
+  opacity: .9;
 }
