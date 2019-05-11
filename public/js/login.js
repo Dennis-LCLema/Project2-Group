@@ -78,36 +78,65 @@
 //   $(".input").val("");
 // });
 
-
 $(document).ready(function () {
 
-	var emailInput = $("#email-input");
-	var usernameInput = $("#username-input");
-	var passwordInput = $("#password-input");
+function handleUserFormSubmit(event) {
+	// event.preventDefault();
+	console.log("clicked button")
+	console.log($("#email-input"));
+	
 
-	$(document).on("submit", "#signup-button", handleUserFormSubmit);
+	var emailInput = $("#email-input").val().trim();
+	var usernameInput = $("#username-input").val().trim();
+	var passwordInput = $("#password-input").val().trim();
+	var passwordCheck = $("#password-confirm").val().trim();
 
-	function handleUserFormSubmit(event) {
-		console.log("clicked button")
-		event.preventDefault();
-		// Don't do anything if the name fields hasn't been filled out
-		if (!usernameInput.val().trim().trim()) {
-			return;
-		}
-		// Calling the upsertAuthor function and passing in the value of the name input
+	// Don't do anything if the name fields hasn't been filled out
+	// if (!usernameInput.val().trim().trim()) {
+	// 	return;
+	// }
+	if (passwordInput === passwordCheck) {
+		var password = passwordInput;
 		upsertUser({
-			email: emailInput.val().trim(),
-			name: nameInput.val().trim(),
-			password: passwordInput,
+			username: usernameInput,
+			email: emailInput,
+			password: password,
 		});
-	};
-
-	function upsertUser(userData) {
-		console.log(userData)
-		// $.post("/api/authors", userData)
-		//   .then(getAuthors);
+	} else {
+		alert("Your passwords don't match!");
 	}
 
+	// console.log("emailInput: " + emailInput);
+	// Calling the upsertAuthor function and passing in the value of the name input
+	
+};
+
+function upsertUser(userData) {
+	console.log(userData)
+	$.post("/api/user", userData)
+	  .then(console.log("I think it worked."));
+}
+
+// $(document).on("click", "#signup-button", handleUserFormSubmit());
 
 
+$( "#signup-button" ).click(function() {
+	
+	handleUserFormSubmit();
+
+	
+  });
+
+
+
+
+//	response.end();
 });
+
+// app.listen(3000);
+
+
+
+
+
+

@@ -16,78 +16,89 @@ $(function () {
         }
     });
 
+    var username = prompt('what is your name?');
+
+  
+var original = 0;     // this variable will be the length of the original database when you load the site 
+$.get("/api/chat", function(data) {
+//	console.log('the value of user name is ' + username);
+     console.log('hello data' + data);
+	for (var i =0; i<data.length; i++) {
+		original = data.length;
+		if (username === data[i].username) {
+				// if user name is correct displaly posts as black 
+			$('.msg-insert').append("<div class='msg-send'>"+ data[i].body  + " - " + data[i].username + "</div>");
+		} 
+		if (username !== data[i].username) {
+			// if your not the user then display other peoples prevoius posts as blue 
+			$('.msg-insert').append("<div class='msg-receive'>"+ data[i].body + " - " + data[i].username +    "</div>");
+		}
+	}
+});
 
 
-    var original = 0;     // this variable will be the length of the original database when you load the site 
-    $.get("/api/chat", function (data) {
-        //	console.log('the value of user name is ' + username);
-        //	console.log('buoieuroeiru ' + data[0].text;
-        for (var i = 0; i < data.length; i++) {
-            original = data.length;
-            if (username === data[i].username) {
-                // if user name is correct displaly posts as black 
-                $('.msg-insert').append("<div class='msg-send'>" + data[i].text + " - " + data[i].username + "</div>");
-            }
-            if (username !== data[i].username) {
-                // if your not the user then display other peoples prevoius posts as blue 
-                $('.msg-insert').append("<div class='msg-receive'>" + data[i].text + " - " + data[i].username + "</div>");
-            }
-        }
-    });
 
+// a function that displays the most recent information 
 
+	setInterval(function(){ 
+		console.log(original);
+	var difference = 0;  	
+		// function that displays other people 
+		$.get('api/chat', function(data) {
+		
+		 difference = (data.length - original);     //get the difference between the new data.length and the old 
+		console.log('dif is ' + difference);
 
-    // a function that displays the most recent information 
+function display ()	{ 	
+for (var i=0; i<data.length; i++) {
+var y = data[i].username;
+	//console.log(data[i].username);
 
-    setInterval(function () {
-        console.log(original);
-        var difference = 0;
-        // function that displays other people 
-        $.get('api/chat', function (data) {
+}
+return y; 
+}
+console.log('the value of the function is ' + display());
+        // if the current username does not equal itself then display the information 
+		if (difference>=1 && username!== display() ) {
+			for (var i = original; i<=data.length; i++ )  {
+				$('.msg-insert').append("<div class='msg-receive'>"+ data[i].body + " - " + data[i].username + "</div>");
 
-            difference = (data.length - original);     //get the difference between the new data.length and the old 
-            console.log('dif is ' + difference);
+				// reset the values and increase the orginial variable 
+				difference = 0;  
+				original ++; 
+			console.log('inside the diff is ' + difference);
+			}	
+		}; 
+	})
 
-            if (difference >= 1 && somehtinghere) {
-                for (var i = original; i <= data.length; i++) {
-                    $('.msg-insert').append("<div class='msg-receive'>" + data[i].text + "</div>");
+	 }, 1000);
 
-                    // reset the values and increase the orginial variable 
-                    difference = 0;
-                    original++;
-                    console.log('inside the diff is ' + difference);
-                }
-            };
-        })
+	
+	textarea.keypress(function(event) {
+		var $this = $(this);
 
-    }, 5000);
+		if(event.keyCode == 13){      // event code 13 is the enter button 
 
+			var msg = $this.val().trim();
+			
+			$this.val('');
+            $('.msg-insert').append("<div class='msg-send'>"+ msg+ " - " + username + "</div>");
+			
+			var x = {
+				body:msg,
+				username: username 
+			}
 
-    textarea.keypress(function (event) {
-        var $this = $(this);
+	    $.ajax("api/chat", {
+			type: "POST", 
+			data: x
+		}).then(
+			function () {
+				console.log('post was succesful!')
 
-        if (event.keyCode == 13) {      // event code 13 is the enter button 
-
-            var msg = $this.val().trim();
-
-            $this.val('');
-            $('.msg-insert').append("<div class='msg-send'>" + msg + " - " + username + "</div>");
-
-            var x = {
-                text: msg,
-                username: username
-            }
-
-            $.ajax("api/chat", {
-                type: "POST",
-                data: x
-            }).then(
-                function () {
-                    console.log('post was succesful!')
-
-                })
-
-        }
-    });
+			})
+			
+}
+	});
 
 });

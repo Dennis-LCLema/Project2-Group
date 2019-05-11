@@ -16,15 +16,15 @@ module.exports = function(app) {
   });
 
   app.get("/mlb", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/sports.html"))
+    res.sendFile(path.join(__dirname, "../views/mlb.html"))
   });
 
   app.get("/nba", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/cars.html"))
+    res.sendFile(path.join(__dirname, "../views/nba.html"))
   });
 
   app.get("/nfl", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/music.html"))
+    res.sendFile(path.join(__dirname, "../views/nfl.html"))
   });
 
   app.get("/login", function(req, res) {

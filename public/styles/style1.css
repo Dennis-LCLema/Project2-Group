@@ -17,18 +17,18 @@ body{
   margin: 30px auto;
 }
 
-.wrapper2 {
-  margin: auto;
-  width: 48%;
+.wrapper2{
   display: grid;
   grid-template-columns: 50% 50%;
+  width: 50%;
+  margin: 0 auto;
+
 }
 
 .signup,
 .login{
   width: 100%;
   background: rgb(99, 99, 99);
-  float: left;
   height: 60px;
   line-height: 50px;
   text-align: center;
