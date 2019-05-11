@@ -4,7 +4,10 @@
 } 
 
 body{
-  background: rgba(233, 238, 238, 0.29);
+  background-image: url(../styles/img/radek-novy-1287430-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: roboto;
   user-select: none;
 }
@@ -14,34 +17,44 @@ body{
   margin: 30px auto;
 }
 
+.wrapper2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
 .signup,
 .login{
-  width: 30%;
+  width: 100%;
   background: rgb(99, 99, 99);
-  float: left;
   height: 60px;
   line-height: 50px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
+  margin: auto;
 }
 
 .signup-form{
-  background: rgb(155, 80, 52);
+  background: transparent;
   padding: 40px;
   clear: both;
   width: 60%;
   box-sizing: border-box;
   height: 400px;
+  margin: auto;
 }
 
 .login-form{
-  background: rgb(155, 80, 52);
+  background: transparent;
   padding: 40px;
   clear: both;
   width: 60%;
   box-sizing: border-box;
   height: 325px;
+  margin: auto;
 }
 
 .input{

@@ -11,9 +11,10 @@
 <body>
         <div class="wrapper">
                 <div class="container">
-                  
+                  <div class="wrapper2">
                   <div class="signup">Sign Up</div>
                   <div class="login">Log In</div>
+               </div>
                   
                    <div class="signup-form">
                       <input type="text" placeholder="Your Email Address" class="input" id="email-input"><br />
@@ -34,8 +35,39 @@
               </div>
 
               <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+              <!-- <script src="../public/js/login.js"></script> -->
+              <script>
+              $(".login-form").hide();
+$(".login").css("background", "rgb(255,255,255)");
+$(".btn").css("background", "rgb(255,255,255)");
+$(".signup, .login").css("margin","auto")
+
+$(".login").click(function(){
+  $(".signup-form").hide();
+  $(".login-form").show();
+  $(".signup").css("background", "rgb(255,255,255)");
+  $(".login").css("background", "rgb(99, 99, 99)");
+console.log ("click on login")
+});
+
+
+$(".signup").click(function(){
+  $(".signup-form").show();
+  $(".login-form").hide();
+  $(".login").css("background", "rgb(255,255,255)");
+  $(".signup").css("background", "rgb(99, 99, 99)");
+console.log("click on sign in")
+});
+
+$(".btn").click(function(){
+  $(".input").val("");
+});
+</script>
+
               <script src="js/login.js"></script>
             
+
             
             
             
