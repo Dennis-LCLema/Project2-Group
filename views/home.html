@@ -1,81 +1,153 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>THE CHAT - home</title>
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/styles/chat.css">
-  </head>
-  <body>
-    <div class="site-wrapper" id="homeImage">
-      <div class="site-wrapper-inner">
-          <header class="masthead">
-            <div class="inner">
-              <h3 class="masthead-brand">THE CHAT</h3>
-              <nav class="nav nav-masthead">
-                <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/mlb">Sports</a>
-                <a class="nav-link" href="/nfl">Music</a>
-                <a class="nav-link" href="/nba">Cars</a>
-              </nav>
-            </div>  
-          </header> 
-        <div class="cover-container">
-          <main role="main" class="cover">
-            <h1 class="cover-heading">THE CHAT</h1>
-            <p class="lead">A simple chat app built around rooms</p>
-          </main>
-          <footer class="mastfoot">
-            <div class="inner">
-              <p>Don't be a troll - THE CHAT GROUP</p>
-            </div>
-          </footer>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>THE CHAT - home</title>
+  <link rel="stylesheet" href="../public/styles/style1.css">
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/styles/chat.css">
+  <link rel="stylesheet" href="../public/styles/scoreboard.css">
+</head>
+
+<body>
+  <div class="site-wrapper" id="homeImage">
+    <div class="site-wrapper-inner">
+      <header class="masthead">
+        <div class="inner">
+          <h3 class="masthead-brand">THE CHAT</h3>
+          <nav class="nav nav-masthead">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="../views/mlb.html">MLB</a>
+            <a class="nav-link" href="../views/nfl.html">NFL</a>
+            <a class="nav-link" href="../views/nba.html">NBA</a>
+          </nav>
         </div>
+      </header>
+      <div class="wrapper">
+        <div class="container">
+          <div class="wrapper2">
+            <div class="signup">Sign Up</div>
+            <div class="login">Log In</div>
+          </div>
+
+          <div class="signup-form">
+            <input type="text" placeholder="Your Email Address" class="input" id="email-input"><br />
+            <input type="text" placeholder="Choose a Username" class="input" id="username-input"><br />
+            <input type="password" placeholder="Choose a Password" class="input" id="password-input"><br />
+            <input type="confirmation" placeholder="Confirm Password" class="input" id="password-confirm"><br />
+            <div class="btn" id="signup-button">Create account</div>
+          </div>
+
+          <div class="login-form">
+            <input type="text" placeholder="Email or Username" class="input"><br />
+            <input type="password" placeholder="Password" class="input"><br />
+            <div class="btn">log in</div>
+            <span><a href="#"> ಠ╭╮ಠ I forgot my username or password.</a></span>
+          </div>
+
+        </div>
+
+
+
+
+        <footer>
+
+          <figure class="snip1216">
+            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" /></div>
+            <figcaption>
+              <div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+              <h3>The World Ended Yesterday</h3>
+              <p>
+                I don't need to compromise my principles, because they don't have the slightest bearing on what happens
+                to me
+                anyway.
+              </p>
+            </figcaption>
+            <footer>
+              <div class="views"><i class="ion-eye"></i>2,907</div>
+              <div class="love"><i class="ion-heart"></i>623</div>
+              <div class="comments"><i class="ion-chatboxes"></i>23</div>
+            </footer><a href="#"></a>
+          </figure>
+          <figure class="snip1216 hover">
+            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample68.jpg" alt="sample68" /></div>
+            <figcaption>
+              <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+              <h3>An Abstract Post Heading</h3>
+              <p>
+                Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has
+                tried
+                to contact us.
+              </p>
+            </figcaption>
+            <footer>
+              <div class="views"><i class="ion-eye"></i>1,870</div>
+              <div class="love"><i class="ion-heart"></i>973</div>
+              <div class="comments"><i class="ion-chatboxes"></i>85</div>
+            </footer><a href="#"></a>
+          </figure>
+          <figure class="snip1216">
+            <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample58.jpg" alt="sample58" /></div>
+            <figcaption>
+              <div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+              <h3>Down with this sort of thing</h3>
+              <p>
+                I don't need to compromise my principles, because they don't have the slightest bearing on what happens
+                to me
+                anyway.
+              </p>
+            </figcaption>
+            <footer>
+              <div class="views"><i class="ion-eye"></i>928</div>
+              <div class="love"><i class="ion-heart"></i>198</div>
+              <div class="comments"><i class="ion-chatboxes"></i>23</div>
+            </footer><a href="#"></a>
+          </figure>
+
+
+        </footer>
       </div>
-    </div>
 
-    <div class="chatbubble">
-        <div class="unexpanded">
-            <div class="title">Login into a Room Chat</div>
-        </div>
-        <div class="expanded chat-window">
-          <div class="login-screen container">
-            <form id="loginScreenForm">
-              <div class="form-group">
-                <input type="text" class="form-control" id="fullname" placeholder="Name*" required>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email Address*" required>
-              </div>
-              <button type="submit" class="btn btn-block btn-primary">Start Chat</button>
-            </form>
-          </div>
-          <div class="chats">
-            <div class="loader-wrapper">
-              <div class="loader">
-                <span>{</span><span>}</span>
-              </div>
-            </div>
-            <ul class="messages clearfix">
-            </ul>
-            <div class="input">
-              <form class="form-inline" id="messageSupport">
-                <div class="form-group">
-                  <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-    </div>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.0/dist/axios.min.js"></script>
-    <script src=" https://unpkg.com/@pusher/chatkit-client"></script>
-    <script src="chat.js"></script>
-  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="../public/js/login.js"></script> -->
+<script>
+  $(".login-form").hide();
+  $(".login").css("background", "rgb(255,255,255)");
+  $(".btn").css("background", "rgb(255,255,255)");
+  $(".signup, .login").css("margin", "auto")
+
+  $(".login").click(function () {
+    $(".signup-form").hide();
+    $(".login-form").show();
+    $(".signup").css("background", "rgb(255,255,255)");
+    $(".login").css("background", "rgb(99, 99, 99)");
+    console.log("click on login")
+  });
+
+
+  $(".signup").click(function () {
+    $(".signup-form").show();
+    $(".login-form").hide();
+    $(".login").css("background", "rgb(255,255,255)");
+    $(".signup").css("background", "rgb(99, 99, 99)");
+    console.log("click on sign in")
+  });
+
+  $(".btn").click(function () {
+    $(".input").val("");
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.17.0/dist/axios.min.js"></script>
+<script src=" https://unpkg.com/@pusher/chatkit-client"></script>
+<script src="chat.js"></script>
+<script src="../public/js/login.js"></script>
+
 </html>
