@@ -1,6 +1,16 @@
-app.post("/api/authors", function(req, res) {
-    db.Author.create(req.body).then(function(dbAuthor) {
-      res.json(dbAuthor);
+var db = require("../models");
+
+module.exports = function(app) {
+
+
+
+app.post("/api/user", function(req, res) {
+    console.log("req.body: ", req.body);
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
+
+
+}

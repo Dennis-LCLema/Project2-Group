@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style1.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to 'The Chat'</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/styles/style1.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Welcome to 'The Chat'</title>
 </head>
+
 <body>
-        <div class="wrapper">
-                <div class="container">
-                  <div class="wrapper2">
-                  <div class="signup">Sign Up</div>
-                  <div class="login">Log In</div>
+   <div class="wrapper">
+      <div class="container">
+         <div class="wrapper2">
+            <div class="signup">Sign Up</div>
+            <div class="login">Log In</div>
+         </div>
+
+         <div class="signup-form">
+            <form>
+               <div class="form-group">
+                  <input type="email" class="form-control" id="email-input" placeholder="Enter Email Address">
                </div>
-                  
-                   <div class="signup-form">
-                      <input type="text" placeholder="Your Email Address" class="input" id="email-input"><br />
-                      <input type="text" placeholder="Choose a Username" class="input" id="username-input"><br />
-                      <input type="password" placeholder="Choose a Password" class="input" id="password-input"><br />
-                      <input type="confirmation" placeholder="Confirm Password" class="input" id="password-confirm"><br />
-                      <div class="btn" id="signup-button">Create account</div>
-                   </div>
-                  
-                  <div class="login-form">
-                      <input type="text" placeholder="Email or Username" class="input"><br />
-                      <input type="password" placeholder="Password" class="input"><br />
-                      <div class="btn">log in</div>
-                      <span><a href="#"> ಠ╭╮ಠ I forgot my username or password.</a></span>
-                   </div>
-                  
-                </div>
-              </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" id="username-input" placeholder="Choose a Username">
+               </div>
+               <div class="form-group">
+                  <input type="password" class="form-control" id="password-input" placeholder="Choose a Password">
+               </div>
+               <div class="form-group">
+                  <input type="passwordConfirm" class="form-control" id="password-confirm" placeholder="Confirm Password">
+               </div>
+               <button type="submit" class="btn" id="signup-button">Create Account</button>
 
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-              <!-- <script src="../public/js/login.js"></script> -->
-              <script>
-              $(".login-form").hide();
-$(".login").css("background", "rgb(255,255,255)");
-$(".btn").css("background", "rgb(255,255,255)");
-$(".signup, .login").css("margin","auto")
-
-$(".login").click(function(){
-  $(".signup-form").hide();
-  $(".login-form").show();
-  $(".signup").css("background", "rgb(255,255,255)");
-  $(".login").css("background", "rgb(99, 99, 99)");
-console.log ("click on login")
-});
+               <!-- <input type="text" placeholder="Your Email Address" class="input" id="email-input"><br />
+               <input type="text" placeholder="Choose a Username" class="input" id="username-input"><br />
+               <input type="password" placeholder="Choose a Password" class="input" id="password-input"><br />
+               <input type="confirmation" placeholder="Confirm Password" class="input" id="password-confirm"><br />
+               <input type="submit" class="btn" value="Create Account" id="signup-button"> -->
+            </form>
 
 
-$(".signup").click(function(){
-  $(".signup-form").show();
-  $(".login-form").hide();
-  $(".login").css("background", "rgb(255,255,255)");
-  $(".signup").css("background", "rgb(99, 99, 99)");
-console.log("click on sign in")
-});
+         </div>
 
-$(".btn").click(function(){
-  $(".input").val("");
-});
-</script>
+         <div class="login-form">
+            <input type="text" placeholder="Email or Username" class="input"><br />
+            <input type="password" placeholder="Password" class="input"><br />
+            <div class="btn">log in</div>
+            <span><a href="#"> ಠ╭╮ಠ I forgot my username or password.</a></span>
+         </div>
 
-              <script src="js/login.js"></script>
-            
+      </div>
+   </div>
 
-            
-            
-            
-            
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+   <!-- <script src="../public/js/login.js"></script> -->
+   <script>
+      $(".login-form").hide();
+      $(".login").css("background", "rgb(255,255,255)");
+      $(".btn").css("background", "rgb(255,255,255)");
+      $(".signup, .login").css("margin", "auto")
+
+      $(".login").click(function () {
+         $(".signup-form").hide();
+         $(".login-form").show();
+         $(".signup").css("background", "rgb(255,255,255)");
+         $(".login").css("background", "rgb(99, 99, 99)");
+         console.log("click on login")
+      });
+
+
+      $(".signup").click(function () {
+         $(".signup-form").show();
+         $(".login-form").hide();
+         $(".login").css("background", "rgb(255,255,255)");
+         $(".signup").css("background", "rgb(99, 99, 99)");
+         console.log("click on sign in")
+      });
+
+      $(".btn").click(function () {
+         $(".input").val("");
+      });
+   </script>
+
+   <script src="js/login.js"></script>
+
+
+
+
+
+
 </body>
+
 </html>
