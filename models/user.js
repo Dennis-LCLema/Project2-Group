@@ -9,7 +9,7 @@ var hash = bcrypt.hashSync('bacon', 8);
 
 
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var Users = sequelize.define("Users", {
     // Giving the Author model a name of type STRING
     username: {
       type: DataTypes.STRING,
@@ -20,9 +20,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
+     validate: {
         isEmail: true
-      },
+     },
     },
     password: {
       type: DataTypes.STRING,
@@ -30,10 +30,11 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  User.associate = function (models) {
+  /** 
+  Users.associate = function (models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
-    User.hasMany(models.Post, {
+    Users.hasMany(models.Post, {
       onDelete: "cascade"
     });
   };
@@ -57,6 +58,6 @@ module.exports = function (sequelize, DataTypes) {
     bcrypt.hash('bacon', 8, function(err, hash) {
     });
   });
-
-  return User;
+**/
+  return Users;
 };
