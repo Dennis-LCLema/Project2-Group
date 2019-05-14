@@ -81,6 +81,8 @@
 $(document).ready(function () {
 
 function handleUserFormSubmit(event) {
+
+
 	// event.preventDefault();
 	console.log("clicked button")
 	console.log($("#email-input"));
@@ -97,6 +99,9 @@ function handleUserFormSubmit(event) {
 	// }
 	if (passwordInput === passwordCheck) {
 		var password = passwordInput;
+
+
+		  console.log("password: ", password)
 		upsertUser({
 			username: usernameInput,
 			email: emailInput,
