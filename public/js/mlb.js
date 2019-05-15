@@ -1,6 +1,6 @@
 $(function () {
     //Sportradar API GET
-    var queryURL = "https://chriscastle.com/proxy/index.php?:proxy:http://api.sportradar.us/mlb/trial/v6.5/en/seasons/2019/REG/standings.json?api_key=j63rqup5ae67wc48658t78k4"
+    var queryURL = "https://chriscastle.com/proxy/index.php?:proxy:http://api.sportradar.us/mlb/trial/v6.5/en/seasons/2019/REG/standings.json?api_key=abwe2xxc4yerdc5wed6svnd5"
 
     $.ajax({
       dataType: "JSON",
