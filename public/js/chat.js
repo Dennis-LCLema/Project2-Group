@@ -34,8 +34,9 @@ $(function () {
 
 
 
-$.get("/api/user", function(data) {				
-	username =  data[data.length-1].username;      //whomever is last signed in the database this will be the username!
+$.get("/api/user", function(data) {	
+			
+	username = sessionStorage.getItem("username");      //whomever is last signed in the database this will be the username!
 	
 
 //this get will load everything previously from the database 
