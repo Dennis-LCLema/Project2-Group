@@ -20,7 +20,7 @@
          </div>
 
          <div class="signup-form">
-            <form>
+            <form class="signup">
                <div class="form-group">
                   <input type="email" class="form-control" id="email-input" placeholder="Enter Email Address">
                </div>
@@ -31,7 +31,8 @@
                   <input type="password" class="form-control" id="password-input" placeholder="Choose a Password">
                </div>
                <div class="form-group">
-                  <input type="passwordConfirm" class="form-control" id="password-confirm" placeholder="Confirm Password">
+                  <input type="password" class="form-control" id="password-confirm"
+                     placeholder="Confirm Password">
                </div>
                <button type="submit" class="btn" id="signup-button">Create Account</button>
 
@@ -45,10 +46,17 @@
 
          </div>
 
+
          <div class="login-form">
-            <input id="username" type="text" placeholder="Email or Username" class="input"><br />
-            <input id="password" type="password" placeholder="Password" class="input"><br />
-            <div class="btn" id="loginBtn">log in</div>
+            <form class="signin">
+               <div class="form-group">
+                  <input type="text" class="form-control" id="username" placeholder="Your Username"><br />
+               </div>
+               <div class="form-group">
+                  <input type="password"  class="form-control" id="password"  placeholder="Your Password"><br />
+               </div>
+               <button type="submit" class="btn" id="signin-button">Log In</button>
+            </form>
             <span><a href="#"> ಠ╭╮ಠ I forgot my username or password.</a></span>
          </div>
 
@@ -87,6 +95,8 @@
    </script>
 
    <script src="/js/login.js"></script>
+   <script src="/js/signin.js"></script>
+
 
 
 
