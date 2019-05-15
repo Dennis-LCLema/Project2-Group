@@ -7,14 +7,16 @@
         <title>THE CHAT - HOME</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="/styles/chat.css">
+        <link rel="stylesheet" href="../public/styles/chat.css">
       </head>
 
 <body class="d-flex flex-column h-100" id="homeImage">
   <!-- Fixed Header with 50px padding-->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent">
-      <a class="navbar-brand" href="/">THE CHAT</a>
+      <a class="navbar-brand" href="/home">THE CHAT</a>
+
+
       <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,42 +37,23 @@
           </li>
         </ul>
       </div>
+      <button class="logoutLblPos">
+      Log Out :(
+        </button>
+    </header>
     </nav>
-  </header>
 
   <!-- Begin page content -->
   <main role="main" class="flex-shrink-0">
     <div class="container">
 
       <!-- Home Welcome page -->
-      <main role="main" class="cover">
+      <main role="main" class="cover" id="homeMain">
         <h1 class="cover-heading">THE CHAT</h1>
         <p class="lead">A simple chat app built around rooms</p>
       </main>
 
-      <!-- Chat Box -->
-      <div class="wrapper">
-        <div class="chat-box">
-
-          <div class="chat-head">
-            <h2>Chat Box </h2>
-            <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow"
-              width="16">
-          </div>
-
-          <div class="chat-body">
-            <div class="msg-insert">
-              <div class="msg-send"> Send message </div>
-              <div class="msg-receive"> Received message </div>
-            </div>
-            <div class="chat-text">
-              <textarea placeholder="Say Something..."></textarea>
-            </div>
-            <!-- Chat-body end div -->
-          </div>
-        </div>
-
-        <!-- Container and main end div -->
+      <!-- Container and main end div -->
       </div>
   </main>
 

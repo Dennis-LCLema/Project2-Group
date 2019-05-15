@@ -12,6 +12,22 @@ body {
   min-height: 100%;
 }
 
+.logoutLblPos{
+  position: fixed;
+  right: 40%;
+  top: 5px;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: center;
+  border: #007bff;
+  color: blue;
+  cursor: pointer !important;
+}
+.logoutLblPos:hover{
+color: antiquewhite
+}
+
+
 /*Background image */
 #homeImage {
   background: #333;
@@ -264,4 +280,10 @@ table {
   footer { 
     display: none;
 }
+}
+
+#homeMain{
+margin: center;
+
+
 }
