@@ -1,12 +1,4 @@
 var bcrypt = require("bcryptjs");
-var salt = bcrypt.genSaltSync(10);
-var hash = bcrypt.hashSync("B4c0/\/", salt);
-
-bcrypt.compareSync("B4c0/\/", hash); // true
-bcrypt.compareSync("not_bacon", hash); // false
-
-var hash = bcrypt.hashSync('bacon', 8);
-
 
 module.exports = function (sequelize, DataTypes) {
   var Users = sequelize.define("Users", {
@@ -30,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  /** 
+  
   Users.associate = function (models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
@@ -38,26 +30,15 @@ module.exports = function (sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
-
-  bcrypt.genSalt(10, function (err, salt) {
-    bcrypt.hash("B4c0/\/", salt, function (err, hash) {
-      // Store hash in your password DB.
-    });
-    // Load hash from your password DB.
-    bcrypt.compare("B4c0/\/", hash, function (err, res) {
-      // res === true
-    });
-    bcrypt.compare("not_bacon", hash, function (err, res) {
-      // res === false
-    });
-
-    // As of bcryptjs 2.4.0, compare returns a promise if callback is omitted:
-    bcrypt.compare("B4c0/\/", hash).then((res) => {
-      // res === true
-    });
-    bcrypt.hash('bacon', 8, function(err, hash) {
-    });
+  // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
+  Users.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  // Hooks are automatic methods that run during various phases of the User Model lifecycle
+  // In this case, before a User is created, we will automatically hash their password
+  Users.hook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
-**/
+    
   return Users;
 };
