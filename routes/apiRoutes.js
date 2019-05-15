@@ -22,7 +22,8 @@ module.exports = function(app) {
     // and complete property (req.body)
     db.Post.create({
       body: req.body.body,
-      username: req.body.username
+      username: req.body.username,
+      category: req.body.category
      
     }).then(function(Posts) {
       // We have access to the new todo as an argument inside of the callback function

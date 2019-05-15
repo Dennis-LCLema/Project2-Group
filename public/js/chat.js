@@ -1,4 +1,15 @@
 $(function () {
+
+	var bodyID = ($("body")[0].id);
+
+			if (bodyID === "mlbImage") {
+				var categoryID = "mlb";
+			} else if (bodyID === "nbaImage") {
+				var categoryID = "nba";
+			} else if (bodyID === "nflImage") {
+				var categoryID = "nfl";
+			}
+
     var arrow = $('.chat-head img');
     var textarea = $('.chat-text textarea');
 
@@ -31,10 +42,10 @@ $.get("/api/user", function(data) {
 $.get("/api/chat", function(data) {
  for (var i =0; i<data.length-1; i++) {
 		original = data.length;
-		if (username === data[i].username) {
+		if (username === data[i].username && data[i].category === categoryID) {
 			$('.msg-insert').append("<div class='msg-send'>"+ data[i].username  + ": " + data[i].body + "</div>");
 		} 
-		if (username !== data[i].username) {
+		if (username !== data[i].username && data[i].category === categoryID) {
 			$('.msg-insert').append("<div class='msg-receive'>"+ data[i].username + ": " + data[i].body +    "</div>");
 		}
 	}
@@ -97,9 +108,13 @@ $.get("/api/chat", function(data) {
 			$this.val('');     //this is your current message 
             $('.msg-insert').append("<div class='msg-send'>" + "<span style='color:grey; font-weight=bold'>" + username + "</span>" + ":  " + msg + "</div>");
 			
+			
+
+			console.log("categoryID: ", categoryID);
 			var x = {
 				body:msg,
-				username: username 
+				username: username,
+				category: categoryID
 			}
 
 			$('.chat-body').animate({              // this code automatically scrolls the chat down
