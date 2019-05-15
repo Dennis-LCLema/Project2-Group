@@ -18,27 +18,27 @@
 // 	response.sendFile(path.join(__dirname + '/login.html'));
 // });
 
-app.post('/auth', function(request, response) {
-	$("#loginBtn").on("click", function () {
-		var username = request.body.username;
-		var password = request.body.password;
-		if (username && password) {
-			connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function(error, results) {
-				if (results.length > 0) {
-					request.session.loggedin = true;
-					request.session.username = username;
-					response.redirect('/home');
-				} else {
-					response.send('Incorrect Username and/or Password!');
-				}			
-				response.end();
-			});
-			} else {
-			response.send('Please enter Username and Password!');
-			response.end();
-		}
-	});
-});
+// app.post('/auth', function(request, response) {
+// 	$("#loginBtn").on("click", function () {
+// 		var username = request.body.username;
+// 		var password = request.body.password;
+// 		if (username && password) {
+// 			connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function(error, results) {
+// 				if (results.length > 0) {
+// 					request.session.loggedin = true;
+// 					request.session.username = username;
+// 					response.redirect('/home');
+// 				} else {
+// 					response.send('Incorrect Username and/or Password!');
+// 				}			
+// 				response.end();
+// 			});
+// 			} else {
+// 			response.send('Please enter Username and Password!');
+// 			response.end();
+// 		}
+// 	});
+// });
 
 
      
