@@ -52,7 +52,6 @@ body {
 }
 
 /*Navbar Footer styling*/
-
 a:hover {
   color: white !important;
 }
@@ -65,10 +64,10 @@ a {
   color: black !important;
 }
 
-.custom-toggler.navbar-toggler.nflTag{
+.custom-toggler.navbar-toggler.nflTag {
   border-color: rgb(0, 0, 0);
 }
-.custom-toggler #nflID{
+.custom-toggler #nflID {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
@@ -96,6 +95,32 @@ footer {
   writing-mode: vertical-lr;
   position: top;
   color: black;
+}
+
+/* Home Message divs */
+#homeMSG {
+  display: table;
+  margin: 200px auto;
+  min-height: 100px;
+  width: 100%;
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+}
+
+@media only screen and (max-height: 1365px) and (min-height: 1024px) {
+  #homeMSG { 
+    margin: 300px auto;
+}
+
+ @media only screen and (min-height: 568px) and (max-height: 720px) {
+  #homeMSG { 
+    margin: 150px auto;
+}
+
+@media only screen and (min-height: 721px) and (max-height: 823px) {
+  #homeMSG { 
+    margin: 175px auto;
 }
 
 
@@ -257,7 +282,6 @@ table {
   float: right;
   margin: 5px 0px;
 }
-
 }
 
 @media only screen and (max-width: 768px) {
