@@ -85,6 +85,8 @@ function handleUserFormSubmit(event) {
 			email: emailInput,
 			password: password,
 		});
+		sessionStorage.setItem("username", usernameInput);
+
 	} else {
 		alert("Your passwords don't match!");
 	}
@@ -107,6 +109,7 @@ $( "#signup-button" ).click(function(event) {
 	
 	event.preventDefault();
 	handleUserFormSubmit();
+
 	open("/home", "_self");
 	
   });
