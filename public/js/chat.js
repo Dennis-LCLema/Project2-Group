@@ -34,10 +34,18 @@ $(function () {
 
 
 
-$.get("/api/user", function(data) {	
-			
-	username = sessionStorage.getItem("username");      //whomever is last signed in the database this will be the username!
-	
+$.get("/api/user_data", function(data) {	
+
+	var username = data.username;
+
+	// $.get("/api/user_data").then(function(data) {
+	// 	username = data.username;
+	// 	console.log("username inside: ", username)
+	//   });
+
+	  console.log("username outside: ", username)
+
+				
 
 //this get will load everything previously from the database 
 $.get("/api/chat", function(data) {
