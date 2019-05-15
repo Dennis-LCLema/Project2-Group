@@ -4,9 +4,7 @@
     "password": "root",
     "database": "Post",
     "host": "localhost",
-
     "dialect": "mysql", 
-
     "port": 8889
   },
   "test": {
