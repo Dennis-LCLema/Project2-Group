@@ -103,10 +103,11 @@ function upsertUser(userData) {
 // $(document).on("click", "#signup-button", handleUserFormSubmit());
 
 
-$( "#signup-button" ).click(function() {
+$( "#signup-button" ).click(function(event) {
 	
+	event.preventDefault();
 	handleUserFormSubmit();
-
+	open("/home", "_self");
 	
   });
 
