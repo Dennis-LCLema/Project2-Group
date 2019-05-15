@@ -5,7 +5,6 @@ body {
   width: 100%;
   min-height: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 .container {
@@ -94,7 +93,8 @@ footer {
 
 /* Vertical orientate the text on NFL page only */
 .vertical-text {
-  writing-mode: tb-rl;
+  writing-mode: vertical-lr;
+  position: top;
   color: black;
 }
 
