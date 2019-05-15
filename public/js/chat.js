@@ -23,74 +23,70 @@ $(function () {
 
 
 
-
-
 $.get("/api/user", function(data) {				
 	username =  data[data.length-1].username;      //whomever is last signed in the database this will be the username!
 	
-//	console.log('username here is' + username);
-	
-	
-var original = 0;     // this variable will be the length of the original database when you load the site 
-$.get("/api/chat", function(data) {
 
-  //   console.log('hello data' + data);
-	for (var i =0; i<data.length; i++) {
+//this get will load everything previously from the database 
+$.get("/api/chat", function(data) {
+ for (var i =0; i<data.length-1; i++) {
 		original = data.length;
 		if (username === data[i].username) {
-				// if user name is correct displaly posts as black 
-			$('.msg-insert').append("<div class='msg-send'>"+ data[i].username  + " - " + data[i].body + "</div>");
+			$('.msg-insert').append("<div class='msg-send'>"+ data[i].username  + ": " + data[i].body + "</div>");
 		} 
 		if (username !== data[i].username) {
-			// if your not the user then display other peoples prevoius posts as blue 
-			$('.msg-insert').append("<div class='msg-receive'>"+ data[i].username + " - " + data[i].body +    "</div>");
+			$('.msg-insert').append("<div class='msg-receive'>"+ data[i].username + ": " + data[i].body +    "</div>");
 		}
 	}
 });
+	
+	// a get that displays other users posts...
+	$.get('api/chat', function(data) {
 
+		var newDb;  //global variable
 
+		textarea.keypress(function(event) {
+			if (event.keyCode ===13) {
+			var orignaldb = data[data.length-1].id;
+			console.log('the original value is ' + orignaldb);
+			Database();     // call the below function
+			var difference = newDb-orignaldb; //when Database function is called it updates the var newDB
+			console.log('newDB is ' + newDb);
+		 	console.log('the difference is ' + difference); //get the difference between the original and current value 
+			
 
-// a function that displays the most recent information 
-setInterval(function(){ 
-	//	console.log(original);
-	var difference = 0;  	
-		// function that displays other people 
-		$.get('api/chat', function(data) {
-		
-		 difference = (data.length - original);     //get the difference between the new data.length and the old 
-		console.log('dif is ' + difference);
+			 // this code below will display new information into the chat from other users 
+			 if (difference>=1 && username!== display() ) {
+				for (var i = original; i<=data.length-1; i++ )  {
+					$('.msg-insert').append("<div class='msg-receive'>"+ data[i].username + ": " + data[i].body + "</div>");
+					difference = 0;  
+					original ++; 
+				
+					// this code automatically scrolls the chat down when messages update
+				   $('.chat-body').animate({  
+					scrollTop: $('.chat-body')[0].scrollHeight}, "slow");
+					}	
+				}; 
+	}}  )
 
+// get the new value of the database when you press the enter button 
+	function Database () {
+		$.get('api/chat', function(data) {   
+		  newDb = data[data.length-1].id; 
+		 alert(newDb);
+		  	})
+		}
 
-function display ()	{ 	
-for (var i=0; i<data.length; i++) {
-var y = data[i].username;
-	//console.log(data[i].username);
-}
-return y; 
-}
-
-	//console.log('the value of the function is ' + display());
-        // if the current username does not equal itself then display the information 
-		if (difference>=1 && username!== display() ) {
-			for (var i = original; i<=data.length; i++ )  {
-				$('.msg-insert').append("<div class='msg-receive'>"+ data[i].username + " - " + data[i].body + "</div>");
-
-				// reset the values and increase the orginial variable 
-				difference = 0;  
-				original ++; 
-			console.log('inside the diff is ' + difference);
-
-			$('.chat-body').animate({              // this code automatically scrolls the chat down when messages update
-				scrollTop: $('.chat-body')[0].scrollHeight}, "slow");
-
-
-			}	
-		}; 
+		 
+	function display ()	{ 	//this function will search through all the usernames in the database when called and return the value of a username 
+		for (var i=0; i<data.length-1; i++) {
+		var users = data[i].username;
+		}
+		return users; 
+		}
 	})
 
-	 }, 1000);
-
-	
+//this below function will make a post and add into the chat when you press enter 
 	textarea.keypress(function(event) {
 		var $this = $(this);
 
@@ -106,9 +102,8 @@ return y;
 				username: username 
 			}
 
-		
-				$('.chat-body').animate({              // this code automatically scrolls the chat down
-					scrollTop: $('.chat-body')[0].scrollHeight}, "slow");
+			$('.chat-body').animate({              // this code automatically scrolls the chat down
+			scrollTop: $('.chat-body')[0].scrollHeight}, "slow");
 		
 
 	    $.ajax("api/chat", {
@@ -118,14 +113,10 @@ return y;
 			function () {
 				console.log('post was succesful!')
 
-			})
-			
+			})			
 }
 	});
 
-
-})    // put this up where the first get is if the function behaves wierdly 
-
-
+})  
 
 });
