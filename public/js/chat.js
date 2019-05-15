@@ -1,4 +1,7 @@
 $(function () {
+
+	alert("title val: ", $(title).attr());
+
     var arrow = $('.chat-head img');
     var textarea = $('.chat-text textarea');
 
@@ -97,6 +100,8 @@ return y;
 		if(event.keyCode == 13){      // event code 13 is the enter button 
 
 			var msg = $this.val().trim();
+
+
 			
 			$this.val('');     //this is your current message 
             $('.msg-insert').append("<div class='msg-send'>" + "<span style='color:grey; font-weight=bold'>" + username + "</span>" + ":  " + msg + "</div>");
