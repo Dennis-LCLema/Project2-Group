@@ -12,7 +12,7 @@ body {
   min-height: 100%;
 }
 
-.logoutLblPos{
+.logoutLblPos {
   position: fixed;
   right: 40%;
   top: 5px;
@@ -22,8 +22,9 @@ body {
   border: #007bff;
   color: blue;
   cursor: pointer !important;
+  border: 2px solid #007bff;
 }
-.logoutLblPos:hover{
+.logoutLblPos:hover {
 color: antiquewhite
 }
 
@@ -128,15 +129,18 @@ footer {
   #homeMSG { 
     margin: 300px auto;
 }
+}
 
  @media only screen and (min-height: 568px) and (max-height: 720px) {
   #homeMSG { 
     margin: 150px auto;
 }
+}
 
 @media only screen and (min-height: 721px) and (max-height: 823px) {
   #homeMSG { 
     margin: 175px auto;
+}
 }
 
 
@@ -265,13 +269,13 @@ table td + td {
   padding: 5px;
 }
 
-#NL{
+#NL {
   width: 30%;
   float: right;
   margin: 0px 20px;
 }
 
-#AL{
+#AL {
   width: 30%;
   float: right;
   margin: 0px 20px;
@@ -280,6 +284,7 @@ table td + td {
 @media only screen and (max-width: 414px) {
   footer { 
     display: none;
+}
 }
 
 table {
@@ -298,16 +303,10 @@ table {
   float: right;
   margin: 5px 0px;
 }
-}
+
 
 @media only screen and (max-width: 768px) {
   footer { 
     display: none;
 }
-}
-
-#homeMain{
-margin: center;
-
-
 }
