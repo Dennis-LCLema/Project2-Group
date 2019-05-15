@@ -5,7 +5,7 @@ var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/home.html"));
+    res.sendFile(path.join(__dirname, "../views/index.html"));
 
     // db.Example.findAll({}).then(function(dbExamples) {
     //   res.render("index", {
@@ -27,8 +27,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/nfl.html"))
   });
 
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"))
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/home.html"))
   });
 
   // Load example page and pass in an example by id
@@ -41,7 +41,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
- // app.get("*", function(req, res) {
-   // res.render("404");
- // });
+ app.get("*", function(req, res) {
+   res.render("404");
+ });
 };
