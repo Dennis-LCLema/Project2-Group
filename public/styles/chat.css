@@ -12,21 +12,6 @@ body {
   min-height: 100%;
 }
 
-.logoutLblPos{
-  position: fixed;
-  right: 40%;
-  top: 5px;
-  background-color: transparent;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: center;
-  border: #007bff;
-  color: blue;
-  cursor: pointer !important;
-}
-.logoutLblPos:hover{
-color: antiquewhite
-}
-
 
 /*Background image */
 #homeImage {
@@ -128,15 +113,18 @@ footer {
   #homeMSG { 
     margin: 300px auto;
 }
+}
 
  @media only screen and (min-height: 568px) and (max-height: 720px) {
   #homeMSG { 
     margin: 150px auto;
 }
+}
 
 @media only screen and (min-height: 721px) and (max-height: 823px) {
   #homeMSG { 
     margin: 175px auto;
+}
 }
 
 
@@ -265,13 +253,13 @@ table td + td {
   padding: 5px;
 }
 
-#NL{
+#NL {
   width: 30%;
   float: right;
   margin: 0px 20px;
 }
 
-#AL{
+#AL {
   width: 30%;
   float: right;
   margin: 0px 20px;
@@ -306,8 +294,6 @@ table {
 }
 }
 
-#homeMain{
+#homeMain {
 margin: center;
-
-
 }
