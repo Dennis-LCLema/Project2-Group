@@ -35,7 +35,7 @@ $(function () {
             $(".national").append(teamResults);
           };
 
-          // }
+         
         }
 
          //Get all the number of leagues in MLB
@@ -58,7 +58,7 @@ $(function () {
             $(".american").append(teamResults);
           };
 
-          // }
+         
         }
 
       });
