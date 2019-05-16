@@ -210,14 +210,17 @@ footer {
 .msg-send {
   background: white;
 }
+.msg-receive ~ .msg-receive {
+  background: lightgray; 
+}
 
 .msg-receive {
-  background: gainsboro; 
+  background: white; 
 }
 
 .msg-send,
 .msg-receive {
-  width: 250px;
+  width: 275px;
   height: 35px;
   padding: 5px 5px 5px 5px;
   margin: 0px 10px;
