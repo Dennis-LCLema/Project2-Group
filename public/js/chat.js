@@ -53,7 +53,7 @@ $.get("/api/user_data", function(data) {
 //this get will load everything previously from the database 
 
 $.get("/api/chat", function(data) {
- for (var i =0; i<data.length-1; i++) {
+ for (var i =0; i<data.length; i++) {
 		
 		if (username === data[i].username && data[i].category === categoryID) {
 			$('.msg-insert').append("<div class='msg-send'>"+ data[i].username  + ": " + data[i].body + "</div>");
