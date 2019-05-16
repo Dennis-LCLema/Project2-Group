@@ -50,52 +50,6 @@ $(document).ready(function () {
   }
 
 
-	// function handleUserFormSubmit(event) {
-
-	// 	// Don't do anything if the name fields hasn't been filled out
-	// 	// if (!usernameInput.val().trim().trim()) {
-	// 	// 	return;
-	// 	// }
-	// 	if (passwordInput === passwordCheck) {
-	// 		var password = passwordInput;
-	// 		upsertUser({
-	// 			username: usernameInput,
-	// 			email: emailInput,
-	// 			password: password,
-	// 		});
-	// 		// sessionStorage.setItem("username", usernameInput);
-
-	// 	} else {
-	// 		alert("Your passwords don't match!");
-	// 	}
-
-	// 	// console.log("emailInput: " + emailInput);
-	// 	// Calling the upsertAuthor function and passing in the value of the name input
-
-	// };
-
-	// function upsertUser(userData) {
-	// 	console.log(userData)
-	// 	$.post("/api/user", userData)
-	// 		.then(console.log("I think it worked."));
-	// }
-
-	// // $(document).on("click", "#signup-button", handleUserFormSubmit());
-
-
-	// $("#signup-button").click(function (event) {
-
-	// 	event.preventDefault();
-	// 	handleUserFormSubmit();
-
-	// 	open("/home", "_self");
-
-	// });
-
-
-
-
-	//	response.end();
 });
 
 

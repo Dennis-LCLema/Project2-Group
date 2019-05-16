@@ -28,7 +28,6 @@ body{
 .signup,
 .login{
   width: 100%;
-  background: rgb(99, 99, 99);
   height: 60px;
   line-height: 50px;
   text-align: center;
