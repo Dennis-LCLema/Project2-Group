@@ -114,7 +114,7 @@ if (difference===1 && username!== display() && category() === categoryID) {     
 	}; 
 })
 
- }, 1000);
+ }, 100);
 
 
 //this below function will make a post and add into the chat when you press enter 
