@@ -13,6 +13,7 @@ body {
 }
 
 
+
 /*Background image */
 #homeImage {
   background: #333;
@@ -194,14 +195,17 @@ footer {
 .msg-send {
   background: white;
 }
+.msg-receive ~ .msg-receive {
+  background: lightgray; 
+}
 
 .msg-receive {
-  background: gainsboro; 
+  background: white; 
 }
 
 .msg-send,
 .msg-receive {
-  width: 250px;
+  width: 275px;
   height: 35px;
   padding: 5px 5px 5px 5px;
   margin: 0px 10px;
@@ -269,6 +273,7 @@ table td + td {
   footer { 
     display: none;
 }
+}
 
 table {
   min-width: 100%;
@@ -286,14 +291,10 @@ table {
   float: right;
   margin: 5px 0px;
 }
-}
+
 
 @media only screen and (max-width: 768px) {
   footer { 
     display: none;
 }
-}
-
-#homeMain {
-margin: center;
 }
